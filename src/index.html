@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon"  href="data:image/png;base64,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" type="image/x-icon">
+    <link rel="stylesheet" href="C:\Users\ahmed\Documents\GitHub\blog-Website\style.css">
+    <title>Space Blog</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand mx-5 text-white" href="#home">SPACE</a>
+            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="text-white"><i class="fa-solid fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mx-5">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link active text-white btn btn-outline-secondary my-2" aria-current="page"
+                            href="#home">Home</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-white btn btn-outline-secondary my-2" href="#planets">Planets</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-white btn btn-outline-secondary my-2" href="#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End navbar -->
+
+    <!-- Header -->
+    <div class="header text-center container-fluid d-flex justify-content-center align-items-center mb-4" id="home">
+        <h2 class="text-white border-bottom border-2 border-white pb-3">Explore the space trough us.</h2>
+    </div>
+    <!-- End header -->
+
+    <div class="page2" id="planets">
+
+        <div class="container-fluid">
+            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                <div class="col bg-image hover-zoom">
+                    <div class="lc-block card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg border border-2 border-white"
+                        lc-helper="background"
+                        style="background-image: url('https://wallpaperaccess.com/full/538127.jpg'); background-size:cover">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <div class="lc-block pt-5 mt-5 mb-4">
+                                <div editable="rich">
+                                    <h2 class="display-6 lh-1 fw-bold">Planet Mars</h2>
+                                    <p>​Mars is the fourth planet from the Sun – a dusty, cold, desert world with a very
+                                        thin atmosphere.</p>
+                                </div>
+                            </div>
+                            <ul class="lc-block d-flex list-unstyled mt-auto ms-auto"><a
+                                    class="btn btn-link btn-sm text-white " href="#box1" role="button">Read more</a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="lc-block card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg border border-2 border-white"
+                        lc-helper="background"
+                        style="background:url(https://c4.wallpaperflare.com/wallpaper/986/898/387/space-planet-jupiter-hd-wallpaper-preview.jpg) ;background-repeat: no-repeat;  background-size: cover;">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <div class="lc-block pt-5 mt-5 mb-4">
+                                <div editable="rich">
+                                    <h2 class="display-6 lh-1 fw-bold">Planet Jupiter</h2>
+                                    <p>Jupiter is the fifth planet from our Sun and is, by far, the largest planet in
+                                        the solar system – more than twice as massive as all the other planets combined.
+                                    </p>
+                                </div>
+                            </div>
+                            <ul class="lc-block d-flex list-unstyled mt-auto ms-auto"><a
+                                    class="btn btn-link btn-sm text-white " href="#box2" role="button">Read more</a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="lc-block card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg border border-2 border-white"
+                        lc-helper="background"
+                        style="background:url(https://images.hdqwalls.com/wallpapers/saturn-planet-rings-dark-4k-4l.jpg)  center / cover no-repeat;">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <div class="lc-block pt-5 mt-5 mb-4">
+                                <div editable="rich">
+                                    <h2 class="display-6 lh-1 fw-bold">Planet Saturn</h2>
+                                    <p>Saturn is the sixth planet from the Sun and the second-largest planet in our
+                                        solar system. Like fellow gas giant Jupiter, Saturn is a massive ball made
+                                        mostly of hydrogen and helium.</p>
+                                </div>
+                            </div>
+                            <ul class="lc-block d-flex list-unstyled mt-auto ms-auto"><a
+                                    class="btn btn-link btn-sm text-white " href="#box3" role="button">Read more</a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="page3 container-fluid text-start text-white bg-black d-flex justify-content-center align-items-center"
+        id="box1">
+        <div class="box h-75 p3box container my-5 rounded-start-4 border border-2 border-white">
+            <div class="topichead text-start px-4 pt-4">
+                <h3 class="pb-3">This is Mars</h3>
+                <hr class="border border-white border-2 opacity-50">
+            </div>
+            <div class="maintext px-4 py-5 pt-2 lead">
+                Mars is the fourth planet from the Sun – a dusty, cold, desert world with a very thin atmosphere. Mars
+                is also a dynamic planet with seasons, polar ice caps, canyons, extinct volcanoes, and evidence that it
+                was even more active in the past.<br><br>
+                Mars is one of the most explored bodies in our solar system, and it's the only planet where we've sent
+                rovers to roam the alien landscape.<br><br>
+                NASA currently has two rovers (Curiosity and Perseverance), one lander (InSight), and one helicopter
+                (Ingenuity) exploring the surface of Mars.<br><br>
+                Perseverance rover – the largest, most advanced rover NASA has sent to another world – touched down on
+                Mars on Feb. 18, 2021, after a 203-day journey traversing 293 million miles (472 million kilometers).
+                The Ingenuity helicopter rode to Mars attached to the belly of Perseverance.<br><br>
+                Perseverance is one of three spacecraft that arrived at Mars in 2021. The Hope orbiter from the United
+                Arab Emirates arrived on Feb. 9, 2021. China’s Tianwen-1 mission arrived on Feb. 10, 2021, and includes
+                an orbiter, a lander, and a rover. Europe and India also have spacecraft studying Mars from
+                orbit.<br><br>
+                In May 2021, China became the second nation to ever land successfully on Mars when its Zhurong Mars
+                rover touched down.<br><br>
+                An international fleet of eight orbiters is studying the Red Planet from above including three NASA
+                orbiters: 2001 Mars Odyssey, Mars Reconnaissance Orbiter, and MAVEN.
+
+            </div>
+        </div>
+    </div>
+
+    <div class="page4  container-fluid text-start text-white bg-black d-flex justify-content-center align-items-center"
+        id="box2">
+        <div class="box h-75 p4box container my-5 rounded-start-4 bg-primary border border-2 border-white">
+            <div class="topichead text-start px-4 pt-4">
+                <h3 class="pb-3">This is Jupiter</h3>
+                <hr class="border border-white border-2 opacity-50">
+            </div>
+            <div class="maintext px-4 py-5 pt-2 lead">
+                Jupiter has a long history of surprising scientists – all the way back to 1610 when Galileo Galilei
+                found the first moons beyond Earth. That discovery changed the way we see the universe.<br><br>
+                Fifth in line from the Sun, Jupiter is, by far, the largest planet in the solar system – more than twice
+                as massive as all the other planets combined.<br><br>
+                Jupiter's familiar stripes and swirls are actually cold, windy clouds of ammonia and water, floating in
+                an atmosphere of hydrogen and helium. Jupiter’s iconic Great Red Spot is a giant storm bigger than Earth
+                that has raged for hundreds of years.<br><br>
+                One spacecraft – NASA's Juno orbiter – is currently exploring this giant world.
+            </div>
+        </div>
+    </div>
+
+    <div class="page5  container-fluid text-start text-white bg-black d-flex justify-content-center align-items-center"id="box3">
+        <div class="box h-75 p5box container my-5 rounded-start-4 bg-primary border border-2 border-white">
+            <div class="topichead text-start px-4 pt-4">
+                <h3 class="pb-3">This is Saturn</h3>
+                <hr class="border border-white border-2 opacity-50">
+            </div>
+            <div class="maintext px-4 py-5 pt-2 lead">
+                Saturn is the sixth planet from the Sun and the second-largest planet in our solar system.<br><br>
+                Adorned with thousands of beautiful ringlets, Saturn is unique among the planets. It is not the only
+                planet to have rings – made of chunks of ice and rock – but none are as spectacular or as complicated as
+                Saturn's.<br><br>
+                Like fellow gas giant Jupiter, Saturn is a massive ball made mostly of hydrogen and helium.<br><br>
+                Saturn's environment is not conducive to life as we know it. The temperatures, pressures, and materials
+                that characterize this planet are most likely too extreme and volatile for organisms to adapt
+                to.<br><br>
+                While planet Saturn is an unlikely place for living things to take hold, the same is not true of some of
+                its many moons. Satellites like Enceladus and Titan, home to internal oceans, could possibly support
+                life.<br><br>
+                With a radius of 36,183.7 miles (58,232 kilometers), Saturn is 9 times wider than Earth. If Earth were
+                the size of a nickel, Saturn would be about as big as a volleyball.
+            </div>
+        </div>
+    </div>
+    <!-- Contact me -->
+    <div class="contactme container-fluid bg-black py-5" id="contact">
+        <div class="container">
+            <form action="https://getform.io/f/fb483932-e115-4971-a772-316e45416d1b" method="POST">
+
+                <!--Section: Content-->
+                <section class="contact-section dark-grey-text pb-5 ">
+
+                    <!-- Form with header -->
+                    <div class="card px-5 py-5 bg-black text-white border border-2 rounded-4">
+
+                        <!-- Grid row -->
+                        <div class="row">
+
+                            <!-- Grid column -->
+                            <div class="col-lg-8">
+
+                                <div class="card-body form">
+
+                                    <!-- Header -->
+                                    <h3 class="font-weight-bold dark-grey-text mt-4"><i
+                                            class="fas fa-envelope pr-2 mr-1 pb-4 px-3"></i>Write to us:</h3>
+
+                                    <!-- Grid row -->
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-md-6">
+                                            <div class="md-form mb-0">
+                                                <input type="text" id="form-contact-name" class="form-control "
+                                                    name="name">
+                                                <label for="form-contact-name" class="">Your name</label>
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <!-- Grid column -->
+                                        <div class="col-md-6">
+                                            <div class="md-form mb-0">
+                                                <input type="text" id="form-contact-email" class="form-control"
+                                                    name="email">
+                                                <label for="form-contact-email" class="">Your email</label>
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                    </div>
+
+                                    <!-- Grid row -->
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-md-12 py-4">
+                                            <div class="md-form mb-0">
+                                                <textarea id="form-contact-message" class="form-control md-textarea"
+                                                    rows="3" name="message"></textarea>
+                                                <label for="form-contact-message">Your message</label>
+                                                <button class="btn btn-outline-light float-end mt-4">Send</button>
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                    </div>
+                                    <!-- Grid row -->
+
+                                </div>
+
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-lg-4">
+
+                                <div class="card-body contact text-center h-100 white-text">
+
+                                    <h3 class="font-weight-bold my-4 pb-2">Contact information</h3>
+                                    <ul class="text-lg-left list-unstyled ml-4">
+                                        <li>
+                                            <p><i class="fas fa-map-marker-alt pr-2"></i><br>Cairo, haram, egypt</p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fas fa-phone pr-2"></i><br>+201100610084</p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fas fa-envelope pr-2"></i><br>ahmedmgamal772@gmail.com</p>
+                                        </li>
+                                    </ul>
+                                    <hr class="hr-light my-4">
+                                    <ul class="list-inline text-center list-unstyled">
+                                        <li class="list-inline-item">
+                                            <a class="p-2 fa-lg tw-ic">
+                                                <i class="fab fa-twitter text-white"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="p-2 fa-lg li-ic">
+                                                <i class="fab fa-linkedin-in text-white"> </i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="p-2 fa-lg ins-ic">
+                                                <i class="fab fa-instagram text-white"> </i>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row -->
+
+                    </div>
+                    <!-- Form with header -->
+
+                </section>
+                <!--Section: Content-->
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

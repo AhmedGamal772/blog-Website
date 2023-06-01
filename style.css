@@ -1,0 +1,92 @@
+body {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    scrollbar-color: #0d0d0d #464343;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #000000 #000000;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 6px;
+    border: 3px solid #ffffff;
+}
+
+.header {
+    height: 100vh;
+    background-image: url(https://www.hdwallpapers.in/download/stars_glare_space_black_sky_background_4k_hd_galaxy-HD.jpg);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page2 {
+    background-image: url(https://www.solidbackgrounds.com/images/3840x2160/3840x2160-black-solid-color-background.jpg);
+}
+
+.page3 {
+    height: 100vh;
+}
+.p3box{
+    background-image: url(https://images.hdqwalls.com/wallpapers/mars-planet-view-4k-rn.jpg);
+    background-size: cover;
+    background-position: 100% 60%;
+}
+
+.page4 {
+    height: 100vh;
+}
+
+.p4box{
+    background-image: url(https://wallpapercave.com/wp/wp5151078.jpg);
+    background-size: cover;
+    /* background-position: 20% 20%; */
+}
+
+.page5 {
+    height: 100vh;
+}
+
+.p5box{
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/148/365/158/space-universe-planet-nasa-wallpaper-preview.jpg);
+    background-size: cover;
+    background-position: 20% 20%;
+    background-repeat: no-repeat;
+}
+.box {
+    overflow-y: scroll;
+}
+.contact-section .form .btn-floating {
+    left: 3px;
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        background: rgb(36, 36, 36) !important;
+    }
+
+
+
+    *::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}
+
+@media (min-width: 991px) {
+    .box {
+        height: 80%;
+    }
+}
